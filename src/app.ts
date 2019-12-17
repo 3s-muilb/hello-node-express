@@ -9,8 +9,9 @@ expressApp.get('/', (req, res) => {
 });
 
 
-expressApp.get('/name', (req,res) =>{
-  const response: MyName = {myName: "Quoc Bao"};
+expressApp.get('/name/:ten', (req,res) =>{
+  
+  const response: MyName = {myName: req.prams.ten};
   res.send(response);
 })
 
