@@ -1,10 +1,13 @@
-# hello-node-express
-Create hello word api server with node typescript + express.
+# Example how to use Express and TypeORM with TypeScript
 
-With 2 api:
+1. clone repository 
+2. run `npm i`
+3. edit `ormconfig.json` and change your database configuration (you can also change a database type, but don't forget to install specific database drivers)
+4. run `npm start`
+5. open `http://localhost:3000/posts` and you'll empty array
+6. use curl, postman or other tools to send http requests to test your typeorm-based API
 
-```get '/' : response "Hello 3shu!"```
+## How to use CLI?
 
-```get '/name' : response {"myName" : "your name"}```
-# Moi Nguoi push 1 branch rieng nha.
-  
+1. install `typeorm` globally: `npm i -g typeorm`
+2. run `typeorm -h` to show list of available commands
