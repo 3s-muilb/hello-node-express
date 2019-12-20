@@ -1,0 +1,27 @@
+{
+  "name": "cb-example",
+  "version": "0.0.1",
+  "description": "Test",
+  "main": "app.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "couchbase": "^2.6.3",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.0.2",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/couchbase": "^2.4.1",
+    "@types/express": "^4.16.1",
+    "@types/express-handlebars": "0.0.31",
+    "npm-watch": "^0.6.0",
+    "typed-rest-client": "^1.1.2",
+    "typescript": "^3.3.3333"
+  }
+}
