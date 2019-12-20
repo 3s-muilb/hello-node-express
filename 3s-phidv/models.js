@@ -45,13 +45,6 @@ ItemsModel.insert = function(data, callback){
 }
 
 ItemsModel.update = function(data, callback){
-    const id = data.id;
-    if(id === undefined){
-        return null;
-    }
-    this.getById(id, (err, res)) =>{
-         
-    }
     console.log(data);
     var statement = `UPDATE \`kiolyn\` 
                     WHERE meta().id = "${data.id}" 
@@ -71,8 +64,24 @@ ItemsModel.update = function(data, callback){
     })
 }
 
-ItemsModel.delete = function(data, callback){
+ItemsModel.edit = function(data, callback){
+    bucket.getById(data.id, function(error, result){
+        if(data.id === undefined){
+            return callback(error, null);
+        }
+        var items = result.value;
+    })
+}
 
+ItemsModel.delete = function(data, callback){
+    const delQuery = `UPDATE \`kiolyn\` SET isDelete = true WHERE meta().id = "${data.id}"`;
+    const query = N1qlQuery.fromString(delQuery);
+    bucket.query(query, function(error, result){
+        if(error){
+            return callback(error, null);
+        }
+        callback(null, result)
+    })
 }
 
 module.exports.ItemsModel = ItemsModel;

@@ -37,6 +37,15 @@ var appRouter = function(app){
             res.send(result);
         })
     })
+
+    app.delete("/item/:id", function(req, res){
+        ItemsModel.delete(req.params, function(error, result){
+            if(error){
+                return res.status(400).send(error)
+            }
+            res.send(result);
+        })
+    })
 }
 
 module.exports = appRouter;
