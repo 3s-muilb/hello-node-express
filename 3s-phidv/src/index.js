@@ -5,14 +5,14 @@ const couchbase = require("couchbase");
 const cluster = new couchbase.Cluster('couchbase://172.16.15.23:8091');
 cluster.authenticate('mui.lb', '1234567a@');
 const bucket = cluster.openBucket('kiolyn-local');
-bucket.insert('test', { 'some': 'value' }, function (err, result) {
-    if (!err) {
-        console.log("stored document successfully. CAS is %j", result.cas);
-    }
-    else {
-        console.error("Couldn't store document: %j", err);
-    }
-});
+console.log(bucket);
+// bucket.insert('phi.dv', {'phi': 'dv'}, function(err, result) {
+//     if (!err) {
+//         console.log("stored document successfully. CAS is %j", result.cas);
+//     } else {
+//         console.error("Couldn't store document: %j", err);
+//     }
+// });
 // create connection with database
 // note that it's not active database connection
 // TypeORM creates connection pools and uses them for your requests

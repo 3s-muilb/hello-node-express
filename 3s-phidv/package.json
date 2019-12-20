@@ -34,7 +34,8 @@
     "couchbase": "^2.6.9",
     "express": "^4.16.3",
     "mysql": "^2.15.0",
-    "typeorm": "^0.2.0"
+    "typeorm": "^0.2.0",
+    "uuid": "^3.3.3"
   },
   "scripts": {
     "start": "tsc && node src/index.js"
