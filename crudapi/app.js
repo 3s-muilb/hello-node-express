@@ -13,7 +13,7 @@ cluster.authenticate('mui.lb', '1234567a@');
 const bucket = cluster.openBucket('kiolyn');
 module.exports = bucket;
 
-routes(app);
+// routes(app);
 var server = app.listen(6969, function(){
     console.log("Listening on port %s...", server.address().port)
 })
